@@ -19,7 +19,7 @@ class start_screen(game_obj.game_object):
         self.jurandir_speed = 5
 
         self.images = [
-            art.scale_image(art.bro_image, screen_width, screen_height),
+            art.scale_image(art.start_screen_background, screen_width, screen_height),
             art.scale_image(art.jurandir_intro, screen_width, screen_height),
             art.scale_image(art.night, screen_width, screen_height),
             art.scale_image(art.day, screen_width, screen_height)
@@ -116,6 +116,7 @@ class start_button(game_obj.game_object):
         self.start_screen_obj = start_screen_obj
         self.collider_list = col.collider(0, (self.pos_x, self.pos_y), (self.width, self.height))
 
+        self.counter = 0
         self.text_obj = None
 
     def recalculate_pos(self):
@@ -162,6 +163,9 @@ class start_button(game_obj.game_object):
             self.start_screen_obj.change_image()
             game_obj.destroy(self.text_obj)
             game_obj.destroy(self)
+
+        self.counter += util.dt
+        self.pos_y += (math.sin(self.counter * 2) * 0.1)
 
 
     def draw(self):

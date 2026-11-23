@@ -25,6 +25,6 @@ class pc(game_obj.game_object):
 pos = (800, 130)
 pc_obj = pc(SM.SCENES.DESK, pos[0], pos[1])
 pc_obj.sprite = art.scale_image_by_magnitude(art.pc, 0.7)
-width = pc_obj.sprite.get_width()
-height = pc_obj.sprite.get_height()
-pc_obj.collider_list =  col.collider(0, pos, [width, height])
+width = pc_obj.sprite.get_width() - 150
+height = pc_obj.sprite.get_height() - 130
+pc_obj.collider_list =  col.collider(0, (pos[0] + 70, pos[1] + 70), [width, height])

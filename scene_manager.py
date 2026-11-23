@@ -1,6 +1,6 @@
 from enum import Enum
 
-current_scene = 1
+current_scene = 0
 scene_list = list()
 
 class scene:

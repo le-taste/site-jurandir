@@ -1,7 +1,7 @@
 import pygame
 import game_obj
 import utility as util
-import scene_manager as SM
+
 
 class text_prefab(game_obj.game_object):
 
@@ -32,12 +32,13 @@ class text_prefab(game_obj.game_object):
                 if (self.message[next] == ' '):
                     self.text_index += 1
 
-            self.text = self.font.render(self.message[0:self.text_index], True, (255, 255, 255))
-            
             self.text_index += 1
             self.counter = 0
+
+            self.text = self.font.render(self.message[0:self.text_index], True, (255, 255, 255))
         else:
             self.counter += util.dt
 
     def draw(self):
-        util.screen.blit(self.text, (40, 40))
+        pygame.draw.rect(util.screen, "black", [30, 30, self.text.get_width() + 60, self.text.get_height() + 30])
+        util.screen.blit(self.text, (60, 60))

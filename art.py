@@ -9,7 +9,8 @@ def scale_image(sprite, new_width, new_height):
 def scale_image_by_magnitude(sprite, new_scale):
     return pygame.transform.scale_by(sprite, new_scale)
 
-bro_image = process_image("art/bro.png")
+
+start_screen_background = process_image("art/start_screen_background.png")
 lula_image = process_image("art/lula.png")
 mao_image = process_image("art/mao.png")
 start_button_image = process_image("art/start_button.png")

@@ -4,8 +4,7 @@ import game_obj
 import utility as util
 import scene_manager as SM
 from scene_objects import desk, inside_pc, game_start
-from game_loop import problem_text
-from game_loop import text_bubble
+from game_loop import text_bubble, problem_manager
 
 # pygame setup
 pygame.init()
@@ -65,7 +64,7 @@ while running:
                     obj.stopped_colliding()
                     obj.is_colliding = False
 
-                pygame.draw.rect(util.screen, "white", (collider.pos[0], collider.pos[1], collider.shape[0], collider.shape[1]))
+                #pygame.draw.rect(util.screen, "white", (collider.pos[0], collider.pos[1], collider.shape[0], collider.shape[1]))
             except:
                 pass
 
