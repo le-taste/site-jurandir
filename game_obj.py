@@ -1,10 +1,7 @@
-import collision as col
-import pygame
 import utility as util
 import scene_manager as SM
 
-class game_object: 
-
+class game_object:
     def __init__(self, *args):
         self.pos_x = 0
         self.pos_y = 0

@@ -1,10 +1,11 @@
 import pygame
-import collision as col
 import game_obj
+import collision as col
 import utility as util
+
 import scene_manager as SM
 from scene_objects import desk, inside_pc, game_start
-from game_loop import text_bubble, problem_manager
+from game_loop import text_bubble, problem_manager, problem_text
 
 # pygame setup
 pygame.init()
@@ -45,7 +46,6 @@ while running:
                     if (not obj.is_colliding):
                         obj.just_collided()
                         obj.is_colliding = True
-
                 elif (obj.is_colliding):
                     obj.stopped_colliding()
                     obj.is_colliding = False

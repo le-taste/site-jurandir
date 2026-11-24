@@ -40,5 +40,8 @@ class text_prefab(game_obj.game_object):
             self.counter += util.dt
 
     def draw(self):
+
+        if (self.text == None): return
+
         pygame.draw.rect(util.screen, "black", [30, 30, self.text.get_width() + 60, self.text.get_height() + 30])
         util.screen.blit(self.text, (60, 60))

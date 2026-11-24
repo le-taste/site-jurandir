@@ -13,9 +13,14 @@ table.sprite = art.scale_image(art.table, util.screen_width, util.screen_height)
 
 class pc(game_obj.game_object):
 
+    def setup(self):
+        self.mouse_pstate = util.mouse_pressed
+
     def update(self):
-        if util.mouse_pressed and self.is_colliding:
+        if util.mouse_pressed and self.is_colliding and (self.mouse_pstate != util.mouse_pressed):
             self.switch_scene()
+
+        self.mouse_pstate = util.mouse_pressed
 
     def switch_scene(self):
         SM.current_scene = SM.SCENES.PC.value
